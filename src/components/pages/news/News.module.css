@@ -1,3 +1,14 @@
 .news {
-    margin-top: 7rem;
+    margin: 0 5rem;
+    margin-top: 7rem; 
+}
+
+.press_releases {
+    font-size: 35px;
+}
+
+.sm_text {
+    margin-top: 10px;
+    margin-bottom: 20px;
+    color: gray;
 }

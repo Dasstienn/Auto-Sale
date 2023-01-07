@@ -12,7 +12,7 @@ export default class AllCars extends React.Component {
             categoryToShow: "all",
             filteredCars: [],
             makeToShow: "",
-            modelToShow: "Corolla"
+            modelToShow: ""
         }
     }
 
@@ -33,24 +33,24 @@ export default class AllCars extends React.Component {
         this.setState({ categoryToShow: val })
     }
 
-    componentDidUpdate(_, prevState) {
-        if (prevState.categoryToShow !== this.state.categoryToShow) {
-            this.filterCars()
-        }
-    }
+    // componentDidUpdate(_, prevState) {
+    //     if (prevState !== this.state) {
+    //         this.filterCars()
+    //     }
+    // }
 
-    filterCars = () => {
-        let filteredData = this.state.data.filter(car => {
-            return car.category === this.state.categoryToShow || this.state.categoryToShow === "all"
-        })
-        filteredData = filteredData.filter(car => {
-            return car.make === this.state.makeToShow || this.state.makeToShow === ""
-        })
-        filteredData = filteredData.filter(car => {
-            return car.model === this.state.modelToShow
-        })
-        this.setState({ filteredCars: filteredData })
-    }
+    // filterCars = () => {
+    //     let filteredData = this.state.data.filter(car => {
+    //         return car.category === this.state.categoryToShow || this.state.categoryToShow === "all"
+    //     })
+    //     filteredData = filteredData.filter(car => {
+    //         return car.make === this.state.makeToShow || this.state.makeToShow === ""
+    //     })
+    //     filteredData = filteredData.filter(car => {
+    //         return car.model === this.state.modelToShow
+    //     })
+    //     this.setState({ filteredCars: filteredData })
+    // }
 
     render() {
         const categories = ["all"]
@@ -76,12 +76,12 @@ export default class AllCars extends React.Component {
                         {categories.map(cat => (<CategoryButton category={cat} setCategory={this.setCategory} />))}
                     </div>
                     <div className="allcars">
-                        {/* {this.state.data.map(car => {
+                        {this.state.data.map(car => {
                             if (car.category === this.state.categoryToShow || this.state.categoryToShow === "all") {
                                 return < CardComponent car={car} />
                             }
-                        })} */}
-                        {this.state.filteredCars.map(car => < CardComponent car={car} />)}
+                        })}
+                        {/* {this.state.filteredCars.map(car => < CardComponent car={car} />)} */}
                     </div>
                 </div>
             </div>

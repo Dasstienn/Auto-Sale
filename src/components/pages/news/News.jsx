@@ -1,5 +1,6 @@
 import useFetch from "../../../useFetch";
 import classes from "./News.module.css"
+import Article from "./Article";
 
 const News = () => {
     const url = "https://newsdata.io/api/1/news?apikey=pub_153684d264329870e5377c61408b48d420e02&q=car&country=us&language=en&category=technology"
@@ -7,10 +8,11 @@ const News = () => {
 
     return (
         <div className={classes.news}>
-            <h1>Custom React Hook (Data Fetch)</h1>
+            <p className={classes.press_releases}>Press Releases</p>
+            <p className={classes.sm_text}>In this section of Auto Sale, you can find news related to new cars and auto market, in overall.</p>
             {loading && <h3>Loading...</h3>}
             {error && <h3>Error: Something went wrong</h3>}
-            {data.length}
+            {data.map(item => <Article passedData={item}/>)}
         </div>
     )
 }

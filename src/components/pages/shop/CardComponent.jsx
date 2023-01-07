@@ -33,6 +33,7 @@ const CardComponent = (props) => {
 
     const descStyle = {
         marginTop: "30px",
+        height: "40px",
     }
 
 
