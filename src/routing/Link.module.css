@@ -1,0 +1,12 @@
+.menu_link {
+    color: black;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.menu_link:hover {
+    cursor: pointer;
+    color: rgb(208, 174, 174);
+    border-bottom: 2px solid rgb(208, 174, 174);
+}

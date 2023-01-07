@@ -1,0 +1,78 @@
+.App {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.shop {
+  margin: 6rem 20px 0 20px;
+}
+
+.shop_main {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  /* width: 100%; */
+  margin: 15px 15px;
+}
+
+.allcars {
+  scrollbar-gutter: stable;
+  overflow: hidden;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  align-items: flex-start;
+  width: 85%;
+  margin-top: 10px;
+  padding-bottom: 20px;
+  min-height: 600px;
+  max-height: 1500px;
+}
+
+.allcars:hover {
+  overflow-y: scroll;
+}
+
+.categories {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 5px;
+  width: 20%;
+}
+
+.browse-by {
+  display: flex;
+  margin: 0 15px;
+  margin-top: 70px;
+}
+
+.browse {
+  text-align: start;
+  font-size: 18px;
+  font-weight: 700;
+  padding-left: 5px;
+  width: 18%;
+  padding-bottom: 5px;
+  border-bottom: 1px solid rgb(218, 212, 212);
+}
+
+.chosen-cat {
+  text-align: start;
+  font-size: 24px;
+  font-weight: 500;
+  margin-left: 80px;
+  margin-bottom: 0;
+}
+
+.cat-count {
+  margin-left: 20px;
+  margin-bottom: 0;
+  padding-top: 7px;
+  font-weight: 500;
+  color: rgb(155, 148, 148);
+}

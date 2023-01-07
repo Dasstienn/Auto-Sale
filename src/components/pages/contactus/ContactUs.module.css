@@ -1,0 +1,80 @@
+.main {
+    display: flex;
+    margin-top: 7rem;
+    padding: 0 35px;
+    justify-content: space-between;
+}
+
+.contactUs {
+    width: 60%;
+    margin-left: 20px;
+}
+
+.contactUs p {
+    font-size: 18px;
+    font-weight: 450;
+    margin-top: 10px;
+}
+
+.inputField p {
+    font-size: 14px;
+    margin-top: 10px;
+    font-weight: 450;
+    width: 92.5%;
+    max-width: "1300px";
+    color: gray;
+}
+
+.inputField button {
+    width: 360px;
+    padding: 9px 0;
+    border: none;
+    font-size: 20px;
+    font-weight: 700;
+    background-color: bisque;
+    border-radius: 5px;
+}
+
+.inputField button:hover {
+    cursor: pointer;
+    box-shadow: 1px 2px gray;
+    background-color: rgb(230, 187, 135);
+}
+
+.second_col {
+    width: 30%;
+}
+
+.more_info {
+    width: 300px;
+    height: 240px;
+    display: flex;
+    flex-direction: column;
+    padding: 10px 20px;
+    background-color: aliceblue;
+}
+
+.more_info h3 {
+    font-size: 25px;
+    margin-bottom: 20px;
+}
+
+.more_info h4 {
+    font-size: 20px;
+    margin-bottom: 5px;
+}
+
+.business_inq {
+    color: rgb(17, 101, 212);
+    font-size: 17px;
+    margin-bottom: 20px;
+}
+
+.business_inq:hover {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.more_info p {
+    font-size: 17px;
+}
