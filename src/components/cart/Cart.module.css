@@ -1,0 +1,88 @@
+.cart {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.your_cart {
+  color: black;
+  position: fixed;
+  top: 30px;
+  left: 20px;
+  border: none;
+  background-color: transparent;
+  font-size: 25px;
+  text-decoration: underline;
+}
+
+.content {
+  margin-top: 60px;
+}
+
+.cart-items {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  max-height: 30rem;
+  scrollbar-gutter: stable;
+  overflow: hidden;
+}
+
+.cart-items:hover {
+  overflow-y: scroll;
+}
+
+.total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: bold;
+  font-size: 1.5rem;
+  margin: 1rem 0;
+}
+
+.actions {
+  text-align: center;
+}
+
+.actions button {
+  width: 90%;
+  font: inherit;
+  cursor: pointer;
+  background-color: transparent;
+  border: 1px solid rgb(212, 208, 208);
+  padding: 0.5rem 2rem;
+  border-radius: 3px;
+  margin-left: 1rem;
+  font-weight: 500;
+  font-size: 20px;
+}
+
+.actions button:hover,
+.actions button:active {
+  background-color: rgb(223, 181, 181);
+  border-color: rgb(212, 208, 208);
+  color: black;
+}
+
+.button--alt {
+  color: gray;
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  border: none;
+  background-color: transparent;
+  font-size: 30px;
+  font-weight: 500;
+}
+
+.button--alt:hover {
+  cursor: pointer;
+  color: rgb(216, 212, 212);
+}
+
+.actions .button {
+  background-color: rgb(241, 224, 224);
+  color: rgb(97, 95, 95);
+}

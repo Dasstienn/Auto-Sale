@@ -1,0 +1,172 @@
+.sell {
+    margin-top: 2.5rem;
+    text-align: center;
+}
+
+.add {
+    position: relative;
+    width: 100%;
+    height: 550px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 80px;
+}
+
+.add_img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("https://digestcars.com/wp-content/uploads/2020/08/selling-a-car.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    z-index: -1;
+}
+
+.add_img::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(139, 115, 115);
+    opacity: 0.7;
+}
+
+.msg {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 450px;
+}
+
+.msg_lg {
+    font-size: 60px;
+    font-weight: 700;
+    color: white;
+    text-align: left;
+}
+
+.msg_sm {
+    font-size: 23px;
+    font-weight: 450;
+    color: white;
+    text-align: left;
+    margin-top: 30px;
+}
+
+.input {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 450px;
+    min-height: 100px;
+    background-color: white;
+    border-radius: 6px;
+    padding: 10px 0 20px 0;
+}
+
+.specs {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 90%;
+}
+
+.btn {
+    margin-top: 20px;
+    width: 80%;
+    height: 50px;
+    padding: 10px 0;
+    font-size: 15px;
+    font-weight: 800;
+    color: white;
+    background-color: rgb(93, 116, 136);
+    border: none;
+}
+
+.btn:hover {
+    cursor: pointer;
+    background-color: rgb(113, 150, 182);
+}
+
+.info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 500px;
+    gap: 50px;
+}
+
+.lg_text {
+    font-size: 45px;
+    font-weight: 650;
+    color: rgb(93, 116, 136);
+}
+
+.sm_text {
+    margin-top: 10px;
+    font-size: 20px;
+    color: rgba(102, 104, 104, 0.801);
+}
+
+.cards {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 40px;
+    width: 75%;
+}
+
+.icon {
+    font-size: 45px;
+    color: rgb(54, 107, 153);
+    margin-bottom: 20px;
+}
+
+.card h5 {
+    color: rgb(93, 116, 136);
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.card p {
+    color: rgba(102, 104, 104, 0.801);
+    line-height: 25px;
+    max-width: 300px;
+}
+
+.please_login {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.please_login p {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-size: 20px;
+    font-weight: 450;
+}
+
+.please_login button {
+    font-size: 18px;
+    font-weight: 700;
+    padding: 10px 35px;
+    border: none;
+    border-radius: 3px;
+    color: rgb(93, 116, 136);
+    background-color: rgb(241, 225, 225);
+}
+
+.please_login button:hover {
+    cursor: pointer;
+    color: rgb(54, 107, 153);
+    background-color: rgb(231, 197, 197);
+}

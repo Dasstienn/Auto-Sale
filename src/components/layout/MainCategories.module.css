@@ -1,0 +1,52 @@
+.main_categories {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    margin: 0 15px;
+}
+
+.main_categories button {
+    position: relative;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 25%;
+    height: 350px;
+    border: 0px;
+}
+
+.main_categories button:hover {
+    cursor: pointer;
+    background-color: whitesmoke;
+    opacity: 0.7;
+}
+
+.sedan {
+    background-image: url("https://stimg.cardekho.com/images/carexteriorimages/930x620/Hyundai/Verna/7729/1616055133475/front-left-side-47.jpg");
+}
+
+.suv {
+    background-image: url("https://www.cartoq.com/wp-content/uploads/2022/06/2022-hyundai-tucson-india-1.jpg");
+}
+
+.hatchback {
+    background-image: url("https://www.motorbiscuit.com/wp-content/uploads/2022/09/Mazda3-12.jpg?w=925");
+}
+
+.coupe {
+    background-image: url("https://cdn.jdpower.com/ArticleImages/2020%20Ford%20Mustang%20Shelby%20GT500%20DSC08854_driving_silver_C1%20635.jpg");
+}
+
+.cat_names {
+    position: absolute;
+    top: 15px;
+    left: 10px;
+    font-size: 20px;
+    color: rgb(255, 255, 255);
+    font-weight: 500;
+}
+
+.main_categories button:hover>span:nth-child(1) {
+    text-decoration: underline;
+}

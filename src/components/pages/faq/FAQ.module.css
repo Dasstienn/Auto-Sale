@@ -1,0 +1,34 @@
+.faq {
+    margin-top: 10rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.title {
+    font-size: 30px;
+    font-weight: 700;
+    margin-bottom: 50px;
+}
+
+.accordion {
+    width: 80%;
+    max-width: 1250px;
+    min-width: 700px;
+}
+
+.not_found {
+    margin-top: 8rem;
+    font-weight: 400;
+    font-size: 17px;
+}
+
+.not_found span {
+    font-weight: 600;
+    text-decoration: underline;
+}
+
+.not_found span:hover {
+    cursor: pointer;
+}
