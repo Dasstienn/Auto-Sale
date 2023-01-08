@@ -1,0 +1,13 @@
+.category {
+    font-style: italic;
+    font-weight: 500;
+    font-size: 18px;
+}
+
+.owner {
+    margin-top: 30px;
+}
+
+.owner span, .contact span {
+    font-weight: 600;
+}

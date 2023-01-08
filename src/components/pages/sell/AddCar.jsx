@@ -92,13 +92,13 @@ export default class AddCar extends React.Component {
     render() {
         return (
             <form onSubmit={this.addNewCar}>
-                <SelectMake setMake={this.setMake} />
-                {this.state.make !== "" && <SelectModel make={this.state.make} setModel={this.setModel} />}
+                <SelectMake setMake={this.setMake} required/>
+                {this.state.make !== "" && <SelectModel make={this.state.make} setModel={this.setModel} required/>}
                 <div className={classes.specs}>
-                    <SelectCategory setCategory={this.setCategory} />
-                    <SelectYear setYear={this.setYear} />
-                    <SelectColor setColor={this.setColor} />
-                    <SelectPrice setPrice={this.setPrice} />
+                    <SelectCategory setCategory={this.setCategory} required/>
+                    <SelectYear setYear={this.setYear} required/>
+                    <SelectColor setColor={this.setColor} required/>
+                    <SelectPrice setPrice={this.setPrice} required/>
                 </div>
                 <SelectDesc setDesc={this.setDesc} required/>
                 <button type="submit" className={classes.btn}>ADD CAR</button>

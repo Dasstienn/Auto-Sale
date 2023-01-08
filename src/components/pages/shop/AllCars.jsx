@@ -1,7 +1,8 @@
 import React from "react";
-import CardComponent from "./CardComponent";
+import CarComponent from "./CarComponent";
 import CategoryButton from "./CategoryButton";
 import MainCategories from "../../layout/MainCategories";
+import CarModal from "./CarModal";
 
 
 export default class AllCars extends React.Component {
@@ -12,7 +13,8 @@ export default class AllCars extends React.Component {
             categoryToShow: "all",
             filteredCars: [],
             makeToShow: "",
-            modelToShow: ""
+            modelToShow: "",
+            open: false
         }
     }
 
@@ -78,7 +80,11 @@ export default class AllCars extends React.Component {
                     <div className="allcars">
                         {this.state.data.map(car => {
                             if (car.category === this.state.categoryToShow || this.state.categoryToShow === "all") {
-                                return < CardComponent car={car} />
+                                return (
+                                    <>
+                                        <CarComponent car={car}/>
+                                    </>
+                                )
                             }
                         })}
                         {/* {this.state.filteredCars.map(car => < CardComponent car={car} />)} */}

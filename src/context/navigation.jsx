@@ -27,5 +27,4 @@ export function NavigationProvider({ children }) {
     </NavigationContext.Provider>
 }
 
-// export {NavigationProvider}
 export default NavigationContext
