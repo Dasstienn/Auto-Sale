@@ -7,7 +7,7 @@ import SelectYear from "./Year";
 import SelectColor from "./Color";
 import SelectPrice from "./Price";
 import SelectDesc from "./Desc";
-
+import PreviewCar from "./PreviewCar";
 
 
 export default class AddCar extends React.Component {
@@ -20,8 +20,11 @@ export default class AddCar extends React.Component {
             year: "",
             color: "",
             price: "",
+            image: "",
             desc: "",
             newCar: {},
+            addCar: {},
+            preview: false
         }
     }
 
@@ -53,9 +56,10 @@ export default class AddCar extends React.Component {
         this.setState({ desc: val })
     }
 
-    addNewCar = (event) => {
+    previewCarOpen = (event) => {
         event.preventDefault()
         const { make, model, category, price, year, color, desc } = this.state
+        this.setState({ image: `https://cdn.imagin.studio/getImage?customer=usdustin&make=${make}&modelFamily=${model}&modelYear=${year}&zoomType=fullscreen&modelVariant=${category}&paintID=1&paintDescription=${color}` })
         const added = {
             id: 2,
             make: make,
@@ -68,11 +72,24 @@ export default class AddCar extends React.Component {
             owner: "Dastan"
         }
         this.setState({
-            newCar: added
+            addCar: added
         })
-        this.setState({ make: "", model: "", category: "", year: "", color: "", price: "", desc: "" })
+        this.setState({ preview: true })
+    }
 
+    previewCarClose = () => {
+        this.setState({ preview: false })
+    }
 
+    addNewCar = () => {
+        this.setState({
+            newCar: this.state.addCar
+        })
+
+        setTimeout(() => {
+            this.setState({ make: "", model: "", category: "", year: "", color: "", price: "", desc: "", image: "" })
+            this.previewCarClose()
+        }, 3000)
     }
 
     componentDidUpdate(_, prevState) {
@@ -91,18 +108,24 @@ export default class AddCar extends React.Component {
 
     render() {
         return (
-            <form onSubmit={this.addNewCar}>
-                <SelectMake setMake={this.setMake} required/>
-                {this.state.make !== "" && <SelectModel make={this.state.make} setModel={this.setModel} required/>}
-                <div className={classes.specs}>
-                    <SelectCategory setCategory={this.setCategory} required/>
-                    <SelectYear setYear={this.setYear} required/>
-                    <SelectColor setColor={this.setColor} required/>
-                    <SelectPrice setPrice={this.setPrice} required/>
-                </div>
-                <SelectDesc setDesc={this.setDesc} required/>
-                <button type="submit" className={classes.btn}>ADD CAR</button>
-            </form>
+            (!this.state.preview ? (
+                <form onSubmit={this.previewCarOpen}>
+                    <SelectMake setMake={this.setMake} required />
+                    {this.state.make !== "" && <SelectModel make={this.state.make} setModel={this.setModel} required />}
+                    <div className={classes.specs}>
+                        <SelectCategory setCategory={this.setCategory} required />
+                        <SelectYear setYear={this.setYear} required />
+                        <SelectColor setColor={this.setColor} required />
+                        <SelectPrice setPrice={this.setPrice} required />
+                    </div>
+                    <SelectDesc setDesc={this.setDesc} required />
+                    <button type="submit" className={classes.btn}>PREVIEW CAR</button>
+                </form>
+            )
+                :
+                (<PreviewCar car={this.state} onAdd={this.addNewCar} onEdit={this.previewCarClose} />)
+            )
+
         )
     }
 }

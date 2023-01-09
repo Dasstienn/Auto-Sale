@@ -52,6 +52,10 @@ export default function FAQ() {
         setExpanded(newExpanded ? panel : false);
     };
 
+    const detail = {
+        borderBottom: "0.5px solid lightgray"
+    }
+
     return (
         <div className={classes.faq}>
             <p className={classes.title}>Frequently Asked Questions:</p>
@@ -79,7 +83,7 @@ export default function FAQ() {
                 <AccordionSummary aria-controls="panel3d-content" id="panel3d-header">
                     <Typography sx={{ fontWeight: 600, fontSize: 25, margin: 0.5 }}>Can I get auto loan?</Typography>
                 </AccordionSummary>
-                <AccordionDetails>
+                <AccordionDetails sx={detail}>
                     <Typography>
                         Yes, we provide financing options for eligible clients, meaning your credit score needs to be within our ranges to get auto loan.
                     </Typography>

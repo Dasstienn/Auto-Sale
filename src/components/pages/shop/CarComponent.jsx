@@ -45,7 +45,7 @@ const CarComponent = (props) => {
 
     return (
         <>
-            <Card sx={{ maxWidth: 345, minWidth: 345, maxHeight: 430, minHeight: 380 }}>
+            <Card sx={{ maxWidth: 325, minWidth: 325, maxHeight: 430, minHeight: 380 }}>
                 <div className={classes.open} onClick={handleOpen}>
                     <CardMedia sx={{ height: 200 }} image={img} />
                     <CardContent>
