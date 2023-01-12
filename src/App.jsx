@@ -15,7 +15,7 @@ import Cart from './components/cart/Cart'
 import CartProvider from './store/CartProvider'
 import UserProfile from './components/authentication/profile/UserProfile'
 import AuthPage from './components/pages/auth/AuthPage'
-import { useContext, useState } from 'react'
+import { useContext, useState, useEffect } from 'react'
 import AuthContext from './store/AuthContext'
 import useNavigation from './hooks/use-navigation'
 import AuthForm from './components/authentication/authform/AuthForm'
@@ -23,9 +23,23 @@ import AuthForm from './components/authentication/authform/AuthForm'
 
 
 function App() {
+  const [carsData, setCarsData] = useState([])
   const [cartIsShown, setCartIsShown] = useState(false)
   const { navigate } = useNavigation()
   const authCtx = useContext(AuthContext)
+
+
+  useEffect(() => {
+    fetch('https://auto-sale-fba02-default-rtdb.firebaseio.com/data.json')
+      .then(res => res.json())
+      .then(res => {
+        const loadedCars = []
+        for (const key in res) {
+          loadedCars.push(res[key])
+        }
+        setCarsData(loadedCars)
+      })
+  }, [])
 
   const showCartHandler = () => {
     setCartIsShown(true)
@@ -42,7 +56,7 @@ function App() {
   return (
     <CartProvider>
       <div className="App" >
-        <Header onShowCart={showCartHandler} />
+        <Header onShowCart={showCartHandler} data={carsData}/>
         {cartIsShown && <Cart onClose={hideCartHandler} />}
         <div>
           <Menu />
@@ -51,7 +65,7 @@ function App() {
               <Home />
             </Route>
             <Route path="/shop">
-              <AllCars />
+              <AllCars data={carsData} />
             </Route>
             <Route path="/sell">
               <Sell />

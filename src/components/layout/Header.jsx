@@ -1,5 +1,5 @@
 import React from "react";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import useNavigation from "../../hooks/use-navigation";
 import classes from "./Header.module.css"
 import HeaderCartButton from "./HeaderCartButton";
@@ -12,6 +12,27 @@ const Header = props => {
     const authCtx = useContext(AuthContext)
     const { navigate } = useNavigation()
 
+    const [searchedVal, setSearchedVal] = useState("")
+    const [filteredData, setFilteredData] = useState([])
+
+    const getSearch = (val) => {
+        const filteredData = props.data.filter(car => {
+            const title = `${car.make} ${car.model} ${car.year}`
+            return title.toLowerCase().includes(val.toLowerCase())
+        })
+        setSearchedVal(val)
+        setFilteredData(filteredData)
+    }
+
+    const displayed = (car) => {
+        setSearchedVal(car)
+    }
+
+    const clicked = (e) => {
+        setSearchedVal(e.target.innerText)
+        setFilteredData([])
+    }
+
     return (
         <header className={classes.header}>
             <div className={classes.part_one}>
@@ -19,7 +40,17 @@ const Header = props => {
                 <Menu />
             </div>
             <div className={classes.part_two}>
-                <SearchInput />
+                <SearchInput getSearch={getSearch} val={searchedVal}/>
+                {searchedVal &&
+                    (<ul className={classes.autocomplete}>
+                        {
+                            filteredData.map(car => {
+                                const title = `${car.make} ${car.model} ${car.year}`
+                                return <li onMouseOver={() => displayed(title)} onClick={clicked}>{title}</li>
+                            })
+                        }
+                    </ul>)
+                }
                 {authCtx.isLoggedIn && <HeaderCartButton onClick={props.onShowCart} />}
                 <AuthMenu />
             </div>

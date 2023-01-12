@@ -29,3 +29,26 @@
   justify-content: space-between;
   align-items: center;
 }
+
+.autocomplete {
+  position: fixed;
+  top: 3rem;
+  background-color: white;
+  border: none;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  width: 20%;
+  padding: 0;
+}
+
+li {
+  list-style: none;
+  text-align: left;
+  cursor: pointer;
+  padding: 3px 20px;
+}
+
+li:hover {
+  font-weight: 600;
+  background-color: rgb(243, 222, 196);
+}

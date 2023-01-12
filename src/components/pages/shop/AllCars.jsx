@@ -27,7 +27,7 @@ export default class AllCars extends React.Component {
                     loadedCars.push(res[key])
                 }
                 this.setState({ data: loadedCars })
-                this.filterCars()
+                // this.filterCars()
             })
     }
 
@@ -82,7 +82,7 @@ export default class AllCars extends React.Component {
                             if (car.category === this.state.categoryToShow || this.state.categoryToShow === "all") {
                                 return (
                                     <>
-                                        <CarComponent car={car}/>
+                                        <CarComponent car={car} />
                                     </>
                                 )
                             }
