@@ -12,7 +12,11 @@ const News = () => {
             <p className={classes.sm_text}>In this section of Auto Sale, you can find news related to new cars and auto market, in overall.</p>
             {loading && <h3>Loading...</h3>}
             {error && <h3>Error: Something went wrong</h3>}
-            {data.map(item => <Article passedData={item}/>)}
+            {data.map(item => {
+                if(item.image_url) {
+                    return <Article  passedData={item} />
+                }
+            })}
         </div>
     )
 }
