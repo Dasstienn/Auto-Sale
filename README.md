@@ -1,6 +1,6 @@
 # Auto Sale
-## Platform for listing and selling cars (built with React.js)
-## [Website](https://someautosale.netlify.app/)
+Platform for listing and selling cars (built with React.js)
+[Website](https://someautosale.netlify.app/)
 
 ![Home](https://user-images.githubusercontent.com/103978864/213964027-f0a660ff-2f7f-46e7-ac9f-182662babf70.png)
 
