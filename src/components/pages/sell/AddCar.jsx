@@ -24,6 +24,8 @@ export default class AddCar extends React.Component {
             desc: "",
             newCar: {},
             addCar: {},
+            userId: "",
+            userEmail: "",
             preview: false
         }
     }
@@ -58,7 +60,7 @@ export default class AddCar extends React.Component {
 
     previewCarOpen = (event) => {
         event.preventDefault()
-        const { make, model, category, price, year, color, desc } = this.state
+        const { make, model, category, price, year, color, desc, userId, userEmail } = this.state
         this.setState({ image: `https://cdn.imagin.studio/getImage?customer=usdustin&make=${make}&modelFamily=${model}&modelYear=${year}&zoomType=fullscreen&modelVariant=${category}&paintID=1&paintDescription=${color}` })
         const added = {
             id: 2,
@@ -69,7 +71,9 @@ export default class AddCar extends React.Component {
             year: year,
             img: `https://cdn.imagin.studio/getImage?customer=usdustin&make=${make}&modelFamily=${model}&modelYear=${year}&zoomType=fullscreen&modelVariant=${category}&paintID=1&paintDescription=${color}`,
             desc: desc,
-            owner: "Dastan"
+            owner: "Dastan",
+            userId: userId,
+            userEmail: userEmail
         }
         this.setState({
             addCar: added
@@ -94,9 +98,12 @@ export default class AddCar extends React.Component {
 
     componentDidUpdate(_, prevState) {
         if (prevState.newCar !== this.state.newCar) {
+            let data = this.state.newCar
+            data.userId = localStorage.getItem("id")
+            data.userEmail = localStorage.getItem("email")
             fetch('https://auto-sale-fba02-default-rtdb.firebaseio.com/data.json', {
                 method: 'POST',
-                body: JSON.stringify(this.state.newCar),
+                body: JSON.stringify(data),
                 headers: {
                     'Content-Type': 'application/json'
                 }
